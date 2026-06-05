@@ -1,0 +1,181 @@
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+  /* 也可以設定 display: block */
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  /* 也可以指定顏色 */
+}
+
+body {
+  font-family: "Noto Sans", sans-serif; /* sans-serif */
+  letters-spacing: 0.02em; 
+}
+
+/* 基礎設定 */
+.font-noto {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* ==========================================
+   Heading 系列 (Font Weight: 700, Line Height: 1.5)
+   ========================================== */
+.heading-base {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.heading-md {
+  font-size: 28px;
+}
+
+.heading-sm {
+  font-size: 24px;
+}
+
+.heading-xs {
+  font-size: 20px;
+}
+
+.heading-xxs {
+  font-size: 18px;
+}
+
+.heading-xxxs {
+  font-size: 16px;
+}
+
+.heading-xxxxs {
+  font-size: 14px;
+}
+
+/* ==========================================
+   Label 系列 (Font Weight: 500, Line Height: 1.5)
+   ========================================== */
+.label-base {
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.label-md {
+  font-size: 16px;
+}
+
+.label-sm {
+  font-size: 14px;
+}
+
+.label-xs {
+  font-size: 13px;
+}
+
+/* ==========================================
+   Paragraph 系列 (Font Weight: 500, Line Height: 1.5)
+   ========================================== */
+.paragraph-base {
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.paragraph-md {
+  font-size: 16px;
+}
+
+.paragraph-sm {
+  font-size: 14px;
+}
+
+.paragraph-xs {
+  font-size: 13px;
+}
+
+:root {
+  /* Primary */
+  --color-primary-50: #FDF7F1;
+  --color-primary-100: #FDE6CF;
+  --color-primary-500: #F5B87B;
+  --color-primary-900: #24140B;
+
+  /* Neutral */
+  --color-neutral-0: #ffffff;
+  --color-neutral-500: #737373;
+  --color-neutral-700: #404040;
+  --color-neutral-900: #1E1E1E;
+}
+
+
+/*icons*/
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+/* utility class 通用設定 */
+/* ----------- */
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.gap-24 {
+  gap: 24px;
+}
+
+.gap-12 {
+  gap: 12px;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-4{
+  margin-right: 4px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.pr-16{
+  padding-right: 16px;
+}
+
+.py-80 {
+  padding: 80px 0;
+}
+
+/* container 設定 */
+
+.container {
+  max-width: 1328px; /*1296+16*2*/
+  padding: 0px 16px;
+  margin: auto;
+}
+
+
+/* 格線系統設定 */
+/* 網格欄寬計算公式：(容器寬度 - 所有 gutter) / 總欄數 * 佔用欄數 + 欄內 gutter */
+/* gutter 總寬 = 24px * 11（12欄之間共 11 個間距） */
+
+.col-2 {
+  width: calc((100% - 24px * 11) / 12 * 2 + 24px * 1);
+}
+
+.col-10 {
+  width: calc((100% - 24px * 11) / 12 * 10 + 24px * 9);
+}

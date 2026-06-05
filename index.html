@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./static/reset.css" />
+    <link rel="stylesheet" href="./static/base.css" />
+    <link rel="stylesheet" href="./static/navbar.css" />
+    <link rel="stylesheet" href="./static/index.css" />
+    <title>Document</title>
+</head>
+<body>
+    <!-- ===== 導覽列 navbar（每頁共用）===== -->
+    <header class="navbar">
+        <div class="container navbar-inner">
+            <!-- logo -->
+            <a href="#" class="navbar-logo">Nelson</a>
+
+            <!-- 漢堡按鈕：只有手機版會顯示（CSS 控制）-->
+            <button class="btn-menu" aria-label="開啟選單">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+
+            <!-- 選單：桌面橫向、手機收進漢堡 -->
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link">服務項目</a></li>
+                    <li><a href="#" class="nav-link">專案作品</a></li>
+                    <li><a href="#" class="nav-link">部落格</a></li>
+                    <li><a href="#" class="nav-link">與我聯絡</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="d-flex gap-24">
+            <!-- 導覽列區塊 -->
+            <div class="col-2">
+                <nav class="pr-16">
+                    <ul class="heading-base heading-xxs">
+                        <li class="tab-item active">
+                            <a class="tab-link" href="#">全部</a>
+                        </li>
+                        <li class="tab-item">
+                            <a class="tab-link" href="#">品牌設計</a>
+                        </li>
+                        <li class="tab-item">
+                            <a class="tab-link" href="#">平面設計</a>
+                        </li>
+                        <li class="tab-item">
+                            <a class="tab-link" href="#">UIUX 設計</a>
+                        </li>
+                        <li class="tab-item">
+                            <a class="tab-link" href="#">網頁設計</a>
+                        </li>
+                        <li class="tab-item">
+                            <a class="tab-link" href="#">設計規範</a>
+                        </li>
+                        <li class="tab-item">
+                            <a class="tab-link" href="#">前端技術</a>
+                        </li>
+                        <li class="tab-item">
+                            <a class="tab-link" href="#">後端架構</a>
+                        </li>
+                        <li class="tab-item">
+                            <a class="tab-link" href="#">AI 趨勢應用</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- 卡片內容區塊 -->
+            <div class="col-10">
+                <ul>
+                    <li>
+                        <a href="#" class="d-flex gap-24 mt-24">
+                            <div class="card-pic">
+                                <img
+                                    src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_1.png?raw=true"
+                                    alt="網頁微互動藝術部落格封面"
+                                />
+                            </div>
+                            <div class="card-content">
+                                <p class="paragraph-md">
+                                    <span>UIUX 設計</span>
+                                    <span>・</span>
+                                    <span>網頁設計</span>
+                                    <span>・</span>
+                                    <span>前端技術</span>
+                                </p>
+                                <h2 class="heading-sm">網頁裡的微互動藝術：利用 CSS 與 JS 動畫為諮詢網站注入靈魂並提升用戶轉化率</h2>
+                                <div class="d-flex paragraph-sm">
+                                    <time datetime="2022-10-16">Oct 16, 2022</time>
+                                    <div class="d-flex ml-auto gap-12">
+                                        <!-- visibility icon 區塊 -->
+                                        <div class="d-flex align-items-center">
+                                            <span class="material-symbols-outlined text-20 mr-4">
+                                                visibility
+                                            </span>
+                                            <span>110 views</span>
+                                        </div>
+                                        <!-- share icon 區塊 -->
+                                        <div class="d-flex align-items-center">
+                                            <span class="material-symbols-outlined text-20 mr-4">share</span>
+                                            <span>2 shares</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="d-flex gap-24 mt-24">
+                            <div class="card-pic">
+                                <img
+                                    src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_2.png?raw=true"
+                                    alt="Figma 職人手記部落格封面"
+                                />
+                            </div>
+                            <div class="card-content">
+                                <p class="paragraph-md">
+                                    <span>UIUX 設計</span>
+                                    <span>・</span>
+                                    <span>設計規範</span>
+                                    <span>・</span>
+                                    <span>前端技術</span>
+                                </p>
+                                <h2 class="heading-sm">10年職人手記：如何運用 Figma 與 Storybook 打造美感與邏輯兼具的企業級設計系統</h2>
+                                <div class="d-flex paragraph-sm">
+                                    <time datetime="2022-10-16">Oct 16, 2022</time>
+                                    <div class="d-flex ml-auto gap-12">
+                                        <div class="d-flex align-items-center">
+                                            <span class="material-symbols-outlined text-20 mr-4">
+                                                visibility
+                                            </span>
+                                            <span>110 views</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <span class="material-symbols-outlined text-20 mr-4">share</span>
+                                            <span>2 shares</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="d-flex gap-24 mt-24">
+                            <div class="card-pic">
+                                <img
+                                    src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_3.png?raw=true"
+                                    alt="品牌設計部落格封面"
+                                />
+                            </div>
+                            <div class="card-content">
+                                <p class="paragraph-md">
+                                    <span>品牌設計</span>
+                                    <span>・</span>
+                                    <span>平面設計</span>
+                                    <span>・</span>
+                                    <span>UIUX 設計</span>
+                                </p>
+                                <h2 class="heading-sm">從平面識別到數位體驗：以「植感生活」為例，探討跨媒體品牌視覺在網頁上的精準轉譯</h2>
+                                <div class="d-flex paragraph-sm">
+                                    <time datetime="2022-10-16">Oct 16, 2022</time>
+                                    <div class="d-flex ml-auto gap-12">
+                                        <div class="d-flex align-items-center">
+                                            <span class="material-symbols-outlined text-20 mr-4">
+                                                visibility
+                                            </span>
+                                            <span>110 views</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <span class="material-symbols-outlined text-20 mr-4">share</span>
+                                            <span>2 shares</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="d-flex gap-24 mt-24">
+                            <div class="card-pic">
+                                <img
+                                    src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_4.png?raw=true"
+                                    alt="後端架構部落格封面"
+                                />
+                            </div>
+                            <div class="card-content">
+                                <p class="paragraph-md">
+                                    <span>UIUX 設計</span>
+                                    <span>・</span>
+                                    <span>前端技術</span>
+                                    <span>・</span>
+                                    <span>AI 趨勢應用</span>
+                                </p>
+                                <h2 class="heading-sm">當 AI 遇上介面設計：資深設計師如何利用生成式工具重塑前端開發工作流與視覺想像力</h2>
+                                <div class="d-flex paragraph-sm">
+                                    <time datetime="2022-10-16">Oct 16, 2022</time>
+                                    <div class="d-flex ml-auto gap-12">
+                                        <div class="d-flex align-items-center">
+                                            <span class="material-symbols-outlined text-20 mr-4">
+                                                visibility
+                                            </span>
+                                            <span>110 views</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <span class="material-symbols-outlined text-20 mr-4">share</span>
+                                            <span>2 shares</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="d-flex gap-24 mt-24">
+                            <div class="card-pic">
+                                <img
+                                    src="https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_5.png?raw=true"
+                                    alt="AI 趨勢部落格封面"
+                                />
+                            </div>
+                            <div class="card-content">
+                                <p class="paragraph-md">
+                                    <span>前端技術</span>
+                                    <span>・</span>
+                                    <span>後端架構</span>
+                                    <span>・</span>
+                                    <span>AI 趨勢應用</span>
+                                </p>
+                                <h2 class="heading-sm">揭開金融 App 的設計密碼：如何優化 Open Bank API 的複雜數據呈現與後端串接安全性</h2>
+                                <div class="d-flex paragraph-sm">
+                                    <time datetime="2022-10-16">Oct 16, 2022</time>
+                                    <div class="d-flex ml-auto gap-12">
+                                        <div class="d-flex align-items-center">
+                                            <span class="material-symbols-outlined text-20 mr-4">
+                                                visibility
+                                            </span>
+                                            <span>110 views</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <span class="material-symbols-outlined text-20 mr-4">share</span>
+                                            <span>2 shares</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 漢堡選單的 JS（放 body 結尾，確保元素都載入完才執行）-->
+    <script src="./static/script.js"></script>
+</body>
+</html>

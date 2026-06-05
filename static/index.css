@@ -1,0 +1,32 @@
+.tab-item {
+    text-align: center;
+    color: var(--color-neutral-700);
+}
+
+.tab-item.active,
+.tab-item:hover {
+    background-color: var(--color-primary-900);
+    color: var(--color-neutral-0);
+}
+
+.tab-link {
+    display: block;
+    padding: 12px 0;
+}
+
+.card-pic {
+    flex-shrink: 0;
+}
+
+.card-content {
+    color: var(--color-neutral-700);
+    flex: 1;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    margin: auto 0;
+}
+
+.card-content .material-symbols-outlined {
+    font-size: 20px;
+}

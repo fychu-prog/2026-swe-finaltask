@@ -1,0 +1,93 @@
+/* ============================================================
+   Navbar（導覽列）— 共用元件
+   寫法：先寫「桌面版」當基本樣式，再用 media query 補「手機版」
+   ============================================================ */
+
+/* navbar 最外層：負責背景色、撐滿整個畫面寬度 */
+.navbar {
+    background-color: var(--color-primary-50); /* 米色背景 #FDF7F1 */
+}
+
+/* navbar 內層：放 logo 和選單，用你現有的 .container 控制最大寬度 + 左右留白 */
+.navbar-inner {
+    display: flex;                 /* 讓 logo 和選單橫向排 */
+    justify-content: space-between;/* logo 靠左、選單靠右，中間自動撐開 */
+    align-items: center;           /* 垂直置中對齊 */
+    padding-top: 20px;             /* 上下留白，撐出 navbar 高度 */
+    padding-bottom: 20px;
+}
+
+/* logo 文字 */
+.navbar-logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-neutral-900);
+}
+
+/* 選單清單（ul）：桌面版橫向排 */
+.nav-list {
+    display: flex;     /* 桌面：選項橫向排成一列 */
+    gap: 32px;         /* 選項之間的間距 */
+    align-items: center;
+}
+
+/* 每個選單連結 */
+.nav-link {
+    font-size: 16px;
+    color: var(--color-neutral-700);
+}
+.nav-link:hover {
+    color: var(--color-neutral-900); /* 滑過時變深一點 */
+}
+
+/* 漢堡按鈕：桌面版「不顯示」，只有手機才出現 */
+.btn-menu {
+    display: none;             /* 桌面版藏起來 */
+    background: none;          /* 拿掉按鈕預設背景 */
+    border: none;             /* 拿掉預設邊框 */
+    cursor: pointer;          /* 滑鼠變成手指 */
+    color: var(--color-neutral-900);
+}
+
+
+/* ============================================================
+   手機版（螢幕寬度 ≤ 767px 時套用）
+   ============================================================ */
+@media (max-width: 767px) {
+
+    /* 手機版：顯示漢堡按鈕 */
+    .btn-menu {
+        display: block;
+    }
+
+    /* 手機版：選單預設「收起來」（先藏起來） */
+    .nav-list {
+        display: none;          /* 預設隱藏，點漢堡才出現 */
+        flex-direction: column; /* 改成直向排列 */
+        gap: 16px;
+        /* 讓選單佔滿一整列，出現在 logo 那行的下方 */
+        width: 100%;
+        padding: 24px 0;
+    }
+
+    /* 當 JS 幫 .nav-list 加上 .active 時 → 把選單顯示出來 */
+    .nav-list.active {
+        display: flex;
+    }
+
+    /* 手機版讓內層可以換行，選單才能掉到下一行 */
+    .navbar-inner {
+        flex-wrap: wrap;
+    }
+
+    /* 包住選單的 <nav> 也撐滿整行，選單才會掉到 logo 那行的下方 */
+    .navbar-inner nav {
+        width: 100%;
+    }
+
+    /* 選單連結置中（手機版比較好看） */
+    .nav-link {
+        display: block;
+        text-align: center;
+    }
+}

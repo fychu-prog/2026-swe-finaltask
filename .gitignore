@@ -1,0 +1,18 @@
+# ===== macOS 系統檔 =====
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# ===== 編輯器 / IDE 設定 =====
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+*~
+
+# ===== 記錄 / 暫存檔 =====
+*.log
+Thumbs.db
