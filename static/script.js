@@ -1,16 +1,8 @@
-// ============================================================
-// 漢堡選單開關
-// ============================================================
+const menuBtn = document.querySelector(".btn-menu"); // 行動版選單按鈕（漢堡按鈕）元素
+const navList = document.querySelector(".nav-list"); // 主導覽選單元素
 
-// 1. 先「抓到」要操作的兩個元素
-const menuBtn = document.querySelector(".btn-menu");   // 漢堡按鈕
-const navList = document.querySelector(".nav-list");   // 選單清單 ul
-
-// 2. 監聽漢堡按鈕的「點擊」事件
-//    白話：當使用者點漢堡按鈕時，執行裡面這個 function
+// 事件監聽器（白話翻譯版：當使用者點擊漢堡選單按鈕，我要做什麼事情）
 menuBtn.addEventListener("click", function () {
-    // toggle = 切換：navList 上若已有 active 就移除、沒有就加上
-    // 加上 active → CSS 的 .nav-list.active 生效 → 選單顯示
-    // 移除 active → 選單收回去
-    navList.classList.toggle("active");
+    navList.classList.toggle("active"); // 我要切換主導覽選單元素上的 class，如果有 active 就移除，沒有就加上
+    document.body.classList.toggle("menu-open"); // 切換 body 元素上的 class，如果有 menu-open 就移除，沒有就加上
 });

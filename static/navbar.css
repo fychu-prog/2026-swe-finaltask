@@ -1,93 +1,114 @@
-/* ============================================================
-   Navbar（導覽列）— 共用元件
-   寫法：先寫「桌面版」當基本樣式，再用 media query 補「手機版」
-   ============================================================ */
+/* header 導覽列 */
 
-/* navbar 最外層：負責背景色、撐滿整個畫面寬度 */
-.navbar {
-    background-color: var(--color-primary-50); /* 米色背景 #FDF7F1 */
+.main-nav {
+  background-color: var(--color-primary-50);
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
-/* navbar 內層：放 logo 和選單，用你現有的 .container 控制最大寬度 + 左右留白 */
-.navbar-inner {
-    display: flex;                 /* 讓 logo 和選單橫向排 */
-    justify-content: space-between;/* logo 靠左、選單靠右，中間自動撐開 */
-    align-items: center;           /* 垂直置中對齊 */
-    padding-top: 20px;             /* 上下留白，撐出 navbar 高度 */
-    padding-bottom: 20px;
+.logo {
+  padding: 12px 0;
 }
 
-/* logo 文字 */
-.navbar-logo {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--color-neutral-900);
-}
-
-/* 選單清單（ul）：桌面版橫向排 */
 .nav-list {
-    display: flex;     /* 桌面：選項橫向排成一列 */
-    gap: 32px;         /* 選項之間的間距 */
-    align-items: center;
+  color: var(--color-neutral-700);
+  background-color: var(--color-primary-50);
 }
 
-/* 每個選單連結 */
 .nav-link {
-    font-size: 16px;
-    color: var(--color-neutral-700);
-}
-.nav-link:hover {
-    color: var(--color-neutral-900); /* 滑過時變深一點 */
+  display: inline-block;
+  padding: 4px 12px;
 }
 
-/* 漢堡按鈕：桌面版「不顯示」，只有手機才出現 */
 .btn-menu {
-    display: none;             /* 桌面版藏起來 */
-    background: none;          /* 拿掉按鈕預設背景 */
-    border: none;             /* 拿掉預設邊框 */
-    cursor: pointer;          /* 滑鼠變成手指 */
-    color: var(--color-neutral-900);
+  display: none; /* 預設隱藏（桌機版不顯示） */
+  border: 0;
+  padding: 12px;
+  background: transparent; /* 移除按鈕預設背景 */
+  color: inherit; /* 繼承父層文字顏色 */
+  font: inherit; /* 繼承父層字型設定 */
+  cursor: pointer; /* 滑鼠移入時顯示手型游標 */
 }
 
+/* 頁面內容佔位區塊，用於模擬實際內容高度 */
+.placeholder {
+  height: 100vh;
+  background-color: #fa0;
+}
 
-/* ============================================================
-   手機版（螢幕寬度 ≤ 767px 時套用）
-   ============================================================ */
-@media (max-width: 767px) {
+@media (max-width: 375px) {
+  /* 手機版套用的 logo 樣式 */
+  .logo {
+    padding: 14px 0;
+  }
 
-    /* 手機版：顯示漢堡按鈕 */
-    .btn-menu {
-        display: block;
-    }
+  /* 漢堡選單手機版顯示 */
+  .btn-menu {
+    display: block;
+    border: 1px solid var(--color-neutral-700); /* 手機版漢堡選單有一個外框 */
+    border-radius: 50%; /* 使外框變成圓形 */
+  }
 
-    /* 手機版：選單預設「收起來」（先藏起來） */
-    .nav-list {
-        display: none;          /* 預設隱藏，點漢堡才出現 */
-        flex-direction: column; /* 改成直向排列 */
-        gap: 16px;
-        /* 讓選單佔滿一整列，出現在 logo 那行的下方 */
-        width: 100%;
-        padding: 24px 0;
-    }
+  /*
+    手機版主導覽列預設為收合狀態。
+    點擊選單按鈕後，透過加入 active class 切換為展開狀態。
+  */
+  .nav-list {
+    opacity: 0; /* 讓內容透明，但元素本身仍會佔據版面空間 */
+    width: 100%;
+    max-height: 0px; /* 將高度收合為 0，避免元素佔據垂直空間 */
+    overflow: hidden; /* 隱藏超出 max-height 範圍的內容 */
+    position: absolute;
+    top: 60px;
+    left: 0px;
+  }
 
-    /* 當 JS 幫 .nav-list 加上 .active 時 → 把選單顯示出來 */
-    .nav-list.active {
-        display: flex;
-    }
+  /* 行動裝置版導覽文字樣式 */
+  .label-mobile-sm {
+    font-size: 14px;
+    font-weight: 500;
+  }
 
-    /* 手機版讓內層可以換行，選單才能掉到下一行 */
-    .navbar-inner {
-        flex-wrap: wrap;
-    }
+  /* 行動裝置版間距 */
+  .gap-md-12 {
+    gap: 12px;
+  }
 
-    /* 包住選單的 <nav> 也撐滿整行，選單才會掉到 logo 那行的下方 */
-    .navbar-inner nav {
-        width: 100%;
-    }
+  /* 第一個選單項目增加上方間距 */
+  .nav-list li:first-child {
+    padding-top: 12px;
+  }
 
-    /* 選單連結置中（手機版比較好看） */
-    .nav-link {
-        display: block;
-        text-align: center;
-    }
+  /* 最後一個選單項目增加下方間距 */
+  .nav-list li:last-child {
+    padding-bottom: 12px;
+  }
+
+  /* 遮罩樣式 */
+  .menu-open .mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  /* body 要隱藏捲軸 */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* 主導覽列展開狀態 */
+  .nav-list.active {
+    opacity: 1; /* 讓內容顯示出來 */
+    max-height: 176px; /* 使用固定高度控制展開範圍，讓動畫更穩定 */
+    display: flex; /* 顯示導覽列，並啟用 flex 排版 */
+    flex-direction: column; /* 手機版選單項目改為垂直排列 */
+    text-align: center;
+    transition:
+      opacity 0.3s ease-in,
+      max-height 0.3s ease-in; /* 加入淡入與展開動畫 */
+  }
 }

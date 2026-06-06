@@ -14,27 +14,48 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- 遮罩元素 -->
+    <div class="mask"></div>
+
     <!-- ===== 導覽列 navbar（每頁共用）===== -->
-    <header class="navbar">
-        <div class="container navbar-inner">
-            <!-- logo -->
-            <a href="#" class="navbar-logo">Nelson</a>
+    <header class="sticky-top">
+      <nav class="main-nav">
+        <div class="container">
+          <div class="col-12">
+            <div class="d-flex flex-wrap align-items-center">
+              <!-- 網站標誌（logo） -->
+              <a class="logo" href="#">
+                <picture>
+                  <source
+                    srcset="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/456698ad0b642710162489555e98fd3b15eb49ff/2026-web-camp/device-mobile.svg"
+                    media="(max-width: 375px)"
+                  />
+                  <img
+                    src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/456698ad0b642710162489555e98fd3b15eb49ff/2026-web-camp/device-pc.svg"
+                    alt=""
+                  />
+                </picture>
+              </a>
 
-            <!-- 漢堡按鈕：只有手機版會顯示（CSS 控制）-->
-            <button class="btn-menu" aria-label="開啟選單">
-                <span class="material-symbols-outlined">menu</span>
-            </button>
+              <!-- 行動版選單按鈕（漢堡按鈕） -->
+              <button class="btn-menu ml-auto" type="button">
+                <span class="material-symbols-outlined">dehaze</span>
+              </button>
 
-            <!-- 選單：桌面橫向、手機收進漢堡 -->
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="#" class="nav-link">服務項目</a></li>
-                    <li><a href="#" class="nav-link">專案作品</a></li>
-                    <li><a href="#" class="nav-link">部落格</a></li>
-                    <li><a href="#" class="nav-link">與我聯絡</a></li>
-                </ul>
-            </nav>
+              <!-- 主導覽選單 -->
+              <ul
+                class="nav-list label-md label-mobile-sm d-flex gap-24 ml-auto gap-md-12"
+              >
+                <li><a class="nav-link" href="#">服務項目</a></li>
+                <li><a class="nav-link" href="#">專案作品</a></li>
+                <li><a class="nav-link" href="#">部落格</a></li>
+                <li><a class="nav-link" href="#">與我聯絡</a></li>
+              </ul>
+
+            </div>
+          </div>
         </div>
+      </nav>
     </header>
 
     <div class="container">
