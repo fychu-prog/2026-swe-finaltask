@@ -1,3 +1,116 @@
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 66px;
+  background-image: url("https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/blog_banner.png?raw=true");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-watermark {
+  position: absolute;
+  top: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 300px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-neutral-0);
+  opacity: 0.2;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  color: var(--color-neutral-0);
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* ===== Blog 主內容區 ===== */
+.blog-main {
+  margin-top: 80px;
+}
+
+/* 第一張卡片對齊 tab 頂部，不需額外上間距 */
+.blog-main .col-10 ul li:first-child a {
+  margin-top: 0;
+}
+
+/* ===== Pagination ===== */
+.pagination {
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.page-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-neutral-700);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.page-btn:hover {
+  background-color: var(--color-primary-100);
+}
+
+.page-btn.active {
+  background-color: var(--color-primary-900);
+  color: var(--color-neutral-0);
+}
+
+.page-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.page-ellipsis {
+  width: 40px;
+  text-align: center;
+  color: var(--color-neutral-700);
+  font-size: 14px;
+}
+
+/* ===== Tab / Card ===== */
 .tab-item {
     text-align: center;
     color: var(--color-neutral-700);
@@ -29,4 +142,37 @@
 
 .card-content .material-symbols-outlined {
     font-size: 20px;
+}
+
+/* ===== Contact 表單 ===== */
+.contact-input-half {
+  --gap: 24px;
+  width: calc((100% - var(--gap)) / 2);
+}
+
+/* 助教範例原為 375px，統一改 768px 與全站斷點一致 */
+@media (max-width: 768px) {
+  .contact-input-half {
+    width: 100%;
+  }
+}
+
+/* ===== 電子報訂閱 ===== */
+.subscriptions {
+  position: relative;
+  background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/subscription_bg.png?raw=true);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dark-60a);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }

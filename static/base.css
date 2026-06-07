@@ -377,6 +377,25 @@ a {
   top: 0;
 }
 
+/* ===== Debug：12-grid 疊圖（在 <body> 加 class="show-grid" 即可顯示）===== */
+.show-grid::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  max-width: 1296px;
+  margin: 0 auto;
+  /* 12 條紅色半透明欄位（86px）+ 24px gutter */
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0.15) 0,
+    rgba(255, 0, 0, 0.15) 86px,
+    transparent 86px,
+    transparent 110px
+  );
+}
+
 .rounded-40 {
   border-radius: 40px;
 }
@@ -546,7 +565,7 @@ a {
   );
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .d-mb-block {
     display: block;
   }
@@ -721,6 +740,10 @@ a {
   .paragraph-mobile-xs {
     font-size: 13px;
     font-weight: 500;
+  }
+
+  .w-md-full {
+    width: 100%;
   }
 
   .text-md-20 {

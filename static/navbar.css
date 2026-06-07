@@ -37,7 +37,7 @@
   background-color: #fa0;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 768px) {
   /* 手機版套用的 logo 樣式 */
   .logo {
     padding: 14px 0;
