@@ -65,7 +65,9 @@
   width: 100%;
   align-items: center;
   justify-content: flex-end;
-  margin-top: 24px;
+  gap: 10px;
+  margin-top: 80px;
+  margin-bottom: 40px;
 }
 
 .page-btn {
@@ -89,7 +91,7 @@
 }
 
 .page-btn.active {
-  background-color: var(--color-primary-900);
+  background-color: var(--color-neutral-700);
   color: var(--color-neutral-0);
 }
 
@@ -240,12 +242,37 @@
   .blog-main .card-content .paragraph-sm {
     font-size: 13px;
   }
+
+  /* 頁碼手機版改滿版撐開（< 在最左、> 在最右）*/
+  .pagination {
+    justify-content: space-between;
+  }
 }
 
 /* ===== Contact 表單 ===== */
 .contact-input-half {
   --gap: 24px;
   width: calc((100% - var(--gap)) / 2);
+}
+
+/* Footer 社群 icon（icon-outline-btn）：固定圓圈 50.66px、符號 13.33px 置中
+   圓圈 = icon 20 + padding 15.33×2；符號用 vector 大小 13.33px */
+footer .bi {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50.66px;
+  height: 50.66px;
+  padding: 0;
+  font-size: 13.33px;
+}
+
+/* 深色背景輸入框的 placeholder 統一白色 */
+.subscriptions input::placeholder,
+footer input::placeholder,
+footer textarea::placeholder {
+  color: var(--color-neutral-0);
+  opacity: 1; /* Firefox 預設會把 placeholder 變半透明，設 1 維持純白 */
 }
 
 /* 助教範例原為 375px，統一改 992px 與全站斷點一致 */
@@ -256,21 +283,33 @@
 }
 
 /* ===== 電子報訂閱 ===== */
-.subscriptions {
+/* 背景圖放在文字區塊（col-7 / Figma 的 "right"），廣告牌剛好填滿文字區 */
+.subscription-box {
   position: relative;
   background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/subscription_bg.png?raw=true);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
 
-  &::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-dark-60a);
-    position: absolute;
-    top: 0;
-    left: 0;
+/* 60% 黑色遮罩 */
+.subscription-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-dark-60a);
+}
+
+/* 讓文字內容浮在遮罩之上 */
+.subscription-box > * {
+  position: relative;
+}
+
+/* 訂閱背景手機版：改用 mobile 專屬圖、靠底對齊（只露出下半部彩色面板）
+   ⚠ 必須放在基礎 .subscription-box 之後，否則會被覆蓋 */
+@media (max-width: 992px) {
+  .subscription-box {
+    background-image: url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/mobile/subscription_bg.png?raw=true);
+    background-position: center bottom;
   }
 }
