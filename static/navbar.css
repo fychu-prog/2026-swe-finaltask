@@ -5,6 +5,7 @@
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 100; /* 讓 navbar 與手機下拉選單疊在頁面內容之上 */
 }
 
 .logo {
@@ -93,6 +94,7 @@
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
+    z-index: 50; /* 蓋在頁面內容之上，但低於 navbar(100) */
   }
 
   /* body 要隱藏捲軸 */

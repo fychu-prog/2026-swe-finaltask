@@ -144,6 +144,66 @@
     font-size: 20px;
 }
 
+/* ===== Blog 區手機版 RWD ===== */
+@media (max-width: 768px) {
+  /* hero 手機版：內容改垂直置中、gap 4px */
+  .hero {
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .hero-content {
+    gap: 4px;
+  }
+
+  /* 內容區上間距縮小 */
+  .blog-main {
+    margin-top: 40px;
+  }
+
+  /* tab 篩選列改成橫向可滑動 bar */
+  .blog-main .col-2 nav {
+    padding-right: 0;
+  }
+
+  .blog-main .col-2 ul {
+    display: flex;
+    gap: 0; /* 間距由各 tab 的左右 padding 12px 提供 */
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox 隱藏捲軸 */
+  }
+
+  .blog-main .col-2 ul::-webkit-scrollbar {
+    display: none; /* Safari/Chrome 隱藏捲軸 */
+  }
+
+  .blog-main .tab-item {
+    flex-shrink: 0; /* 不被壓縮，保持可橫向捲動 */
+  }
+
+  .blog-main .tab-link {
+    padding: 8px 12px; /* 上下 8 + 左右 12（符合設計稿）*/
+    font-size: 16px;
+    line-height: 1.5; /* 16×1.5=24，加上下 padding 16 = 40px 高 */
+    white-space: nowrap;
+  }
+
+  /* 卡片改成圖上文下 */
+  .blog-main .col-10 a {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .blog-main .card-pic {
+    width: 100%;
+  }
+
+  /* 直向後取消垂直置中的 auto margin */
+  .blog-main .card-content {
+    margin: 0;
+  }
+}
+
 /* ===== Contact 表單 ===== */
 .contact-input-half {
   --gap: 24px;

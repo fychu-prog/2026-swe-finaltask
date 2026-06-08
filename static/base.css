@@ -375,6 +375,7 @@ a {
 .sticky-top {
   position: sticky;
   top: 0;
+  z-index: 100; /* sticky header 浮在頁面內容（含遮罩）之上 */
 }
 
 /* ===== Debug：12-grid 疊圖（在 <body> 加 class="show-grid" 即可顯示）===== */
