@@ -47,8 +47,6 @@
   /* 漢堡選單手機版顯示 */
   .btn-menu {
     display: block;
-    border: 1px solid var(--color-neutral-700); /* 手機版漢堡選單有一個外框 */
-    border-radius: 50%; /* 使外框變成圓形 */
   }
 
   /*
