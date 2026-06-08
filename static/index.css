@@ -217,6 +217,21 @@
   .blog-main .card-content {
     margin: 0;
   }
+
+  /* 卡片分類標籤手機版縮為 14px（paragraph/Small）*/
+  .blog-main .card-content .paragraph-md {
+    font-size: 14px;
+  }
+
+  /* 卡片標題手機版縮為 20px（heading/X Small）*/
+  .blog-main .card-content .heading-sm {
+    font-size: 20px;
+  }
+
+  /* 卡片日期/meta 手機版縮為 13px（paragraph/X Small）*/
+  .blog-main .card-content .paragraph-sm {
+    font-size: 13px;
+  }
 }
 
 /* ===== Contact 表單 ===== */
