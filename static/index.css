@@ -139,8 +139,16 @@
     font-size: 20px;
 }
 
+/* 卡片分類標籤：用 flex + gap 控制「·」分隔點兩側間距 4px */
+.card-content .paragraph-md {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+}
+
 /* ===== Blog 區手機版 RWD ===== */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   /* hero 手機版：內容改垂直置中、gap 4px */
   .hero {
     align-items: center;
@@ -240,8 +248,8 @@
   width: calc((100% - var(--gap)) / 2);
 }
 
-/* 助教範例原為 375px，統一改 768px 與全站斷點一致 */
-@media (max-width: 768px) {
+/* 助教範例原為 375px，統一改 992px 與全站斷點一致 */
+@media (max-width: 992px) {
   .contact-input-half {
     width: 100%;
   }

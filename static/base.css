@@ -44,6 +44,8 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   font-family: "Noto Sans", sans-serif;
+  -webkit-font-smoothing: antialiased; /* 讓文字渲染變細，貼近 Figma */
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -566,7 +568,7 @@ a {
   );
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .d-mb-block {
     display: block;
   }
