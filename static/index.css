@@ -60,11 +60,6 @@
   margin-top: 80px;
 }
 
-/* 第一張卡片對齊 tab 頂部，不需額外上間距 */
-.blog-main .col-10 ul li:first-child a {
-  margin-top: 0;
-}
-
 /* ===== Pagination ===== */
 .pagination {
   width: 100%;
@@ -154,6 +149,26 @@
 
   .hero-content {
     gap: 4px;
+  }
+
+  /* hero 標題手機版：40px（BLOGS，依 100px/gap4 回推）*/
+  .hero-title {
+    font-size: 40px;
+  }
+
+  /* hero 副標手機版：40px / 700 / lh 1.2（部落格）*/
+  .hero-subtitle {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  /* hero 水印手機版：縮小 160px、下移到 240px、左偏 -43px（精準對齊設計稿）*/
+  .hero-watermark {
+    top: 240px;
+    left: -43px;
+    transform: none; /* 取消桌機的水平置中 */
+    font-size: 160px;
   }
 
   /* 內容區上間距縮小 */
