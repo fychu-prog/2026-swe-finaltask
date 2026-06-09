@@ -283,60 +283,41 @@ footer textarea::placeholder {
 }
 
 /* ===== 電子報訂閱 ===== */
-.subscription-box {
+/* 助教做法：背景圖鋪在整個 section、置中 + cover。背景與置中的 container
+   共用「視窗中心」當基準，所以彩色面板永遠落在 col-7 文字後方，不需 calc 位移 */
+.subscriptions {
   position: relative;
-}
-
-/* 背景（廣告牌）+ 60% 遮罩合併在 ::before；桌機版可往右延伸超出 12-grid */
-.subscription-box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background-image:
-    linear-gradient(var(--color-dark-60a), var(--color-dark-60a)),
     url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/subscription_bg.png?raw=true);
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center;
   background-size: cover;
 }
 
-/* 文字內容浮在背景之上 */
-.subscription-box > * {
-  position: relative;
+/* 60% 遮罩蓋滿整個 section */
+.subscriptions::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-dark-60a);
 }
 
-/* 訂閱照片：填滿 col-5 寬度，高度用自然比例（526×440），由照片決定整區高度 */
+/* 內容浮在遮罩之上：照片保持明亮、文字壓在被遮暗的彩色面板上 */
+.subscriptions .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* 訂閱照片：填滿 col-5 寬度，高度用自然比例（526×440）*/
 .subscriptions .col-5 img {
   display: block;
   width: 100%;
 }
 
-/* 桌機版：背景圖是 1920×440（滿版設計），往左右延伸成整個視窗寬，
-   彩色面板（在圖中間）才會落在文字後方。照片用 z-index 浮在背景之上。
-   648px = 容器內容寬 1296 的一半；98px = 648 - (col-5 526 + gap 24) 的位移；
-   min() 確保不溢出（≥1320 精準，較窄時退回填滿框）*/
-@media (min-width: 993px) {
-  .subscriptions .col-5 {
-    position: relative;
-    z-index: 1;
-  }
-
-  .subscription-box::before {
-    left: min(0px, calc(98px - 50vw));
-    right: min(0px, calc(648px - 50vw));
-    /* background-size 繼承基礎的 cover：維持比例填滿、面板不變形，
-       <1920 裁掉左右米色邊，1920 剛好精準滿版 */
-  }
-}
-
 /* 手機版：背景改用 mobile 專屬圖、靠底對齊（只露出下半部彩色面板）*/
 @media (max-width: 992px) {
-  .subscription-box::before {
+  .subscriptions {
     background-image:
-      linear-gradient(var(--color-dark-60a), var(--color-dark-60a)),
       url(https://github.com/hexschool/2022-web-layout-training/blob/main/2026-web-camp/mobile/subscription_bg.png?raw=true);
     background-position: center bottom;
   }
