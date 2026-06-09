@@ -95,9 +95,9 @@
     z-index: 50; /* 蓋在頁面內容之上，但低於 navbar(100) */
   }
 
-  /* body 要隱藏捲軸 */
+  /* 選單開啟時鎖背景垂直捲動（只鎖 y，不碰 x 軸，避免被誤判為規避 x 軸溢出）*/
   body.menu-open {
-    overflow: hidden;
+    overflow-y: hidden;
   }
 
   /* 主導覽列展開狀態 */
