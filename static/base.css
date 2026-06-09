@@ -61,6 +61,10 @@ a {
 /* google icon 預設設定 */
 
 .material-symbols-outlined {
+  /* 必須指定字型，否則繼承 body 的 Noto Sans，ligature 不會觸發、直接顯示文字 */
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
   font-variation-settings:
     "FILL" 0,
     "wght" 400,
@@ -68,6 +72,13 @@ a {
     "opsz" 24;
   font-size: 20px;
   display: block;
+  /* 蓋掉 body 繼承的 line-height/letter-spacing，避免 ligature 對應失敗 */
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
 }
 
 /* 設計稿字型 class 設定 */
